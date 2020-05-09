@@ -63,13 +63,13 @@ jekyll-mentions:
 paginate                 : 1
 
 ## jekyll-remote-theme
-remote_theme             : esovm/minima
+remote_theme             : helvm/minima
 
 ## jekyll-seo-tag
-title                    : "Heavenly Esoteric Little Para Assembler"
-tagline                  : "Heavenly Esoteric Little Para Assembler Assembly Program"
+title                    : "Heavenly Esoteric Little C Transpiler"
+tagline                  : "Heavenly Esoteric Little C Transpiler TransCompiler"
 description: >-
-  Documentation of Heavenly Esoteric Little Para Assembler to Esoteric Languages written in Haskell/Eta
+  Documentation of Heavenly Esoteric Little C Transpiler to Esoteric Languages implemented in Haskell/Eta
 url                      : "https://helvm.github.io/helct/"
 author:
   name                   : "Kamil Adam"
@@ -82,7 +82,7 @@ twitter:
 facebook:
 logo                     : "/assets/favicon.ico"
 social:
-  name      : "Kamil Adam"
+  name                   : "Kamil Adam"
   links:
     - https://twitter.com/TheKamilAdam
     - https://github.com/helvm
@@ -108,7 +108,7 @@ compress_html:
 
 # minima
 show_excerpts            : false
-google_analytics         : UA-136426906-2
+google_analytics         : UA-136426906-3
 
 headings_form_titles:
   enabled                : false

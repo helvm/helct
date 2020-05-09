@@ -4,7 +4,7 @@
 name:                helct
 version:             0.1.0.0
 
-synopsis:            helct - Heavenly Esoteric Little Para Assembler to esoteric languages implemented in Haskell/Eta
+synopsis:            helct - Heavenly Esoteric Little C Transpiler to Esoteric Languages implemented in Haskell/Eta
 description:         Please see the README on GitHub at <https://github.com/helvm/helct#readme>
 homepage:            https://helvm.github.io/helct/
 bug-reports:         https://github.com/helvm/helct/issues
