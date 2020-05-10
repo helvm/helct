@@ -1,6 +1,8 @@
 # Welcome to HELCT
 
-HELCT - Heavenly Esoteric Little C Transpiler to Esoteric Languages implemented in Haskell/Eta
+**HELCT** - Heavenly Esoteric Little C Transpiler to Esoteric Languages implemented in Haskell/Eta
+
+**HTCTCL** - TransCis TransCompiled Language
 
 ```
 FOR everyone
