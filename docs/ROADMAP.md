@@ -13,3 +13,4 @@ Transpile C to Esoteric Languages
 * https://github.com/helvm/language-c - Language.C - A C99 library for haskell
 * https://github.com/helvm/language-c-inline - Inline C & Objective-C in Haskell
 * https://github.com/helvm/language-c-quote - The package provides quasiqouters for several dialects of the C language, including CUDA, OpenCL, and Objective-C.
+* https://github.com/esovm/kaleidoscope
