@@ -6,6 +6,8 @@ For short version see [TODO](TODO.md).
 
 Transpile C to Esoteric Languages
 
+* https://github.com/hsovm/kaleidoscope
+
 * http://dev.stephendiehl.com/hask/#happy-alex
 * https://leanpub.com/alexandhappy/read
 
@@ -13,4 +15,12 @@ Transpile C to Esoteric Languages
 * https://github.com/esovm/language-c - Language.C - A C99 library for haskell
 * https://github.com/esovm/language-c-inline - Inline C & Objective-C in Haskell
 * https://github.com/esovm/language-c-quote - The package provides quasiqouters for several dialects of the C language, including CUDA, OpenCL, and Objective-C.
-* https://github.com/hsovm/kaleidoscope
+
+Code tu use in test
+* https://github.com/gjcarrette/siod
+* SCM
+* https://github.com/scheme/scsh
+* Scheme 48
+* Scsh (a Scheme Shell)
+* TinyScheme
+* s7
