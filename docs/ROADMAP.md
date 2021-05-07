@@ -21,6 +21,6 @@ Code tu use in test
 * SCM
 * https://github.com/scheme/scsh
 * Scheme 48
-* Scsh (a Scheme Shell)
+* Scsh (a Scheme Shelct)
 * TinyScheme
 * s7
