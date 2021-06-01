@@ -6,7 +6,7 @@ For short version see [TODO](TODO.md).
 
 Transpile C to Esoteric Languages
 
-* https://github.com/hsovm/kaleidoscope
+* https://github.com/helvm/kaleidoscope
 
 * http://dev.stephendiehl.com/hask/#happy-alex
 * https://leanpub.com/alexandhappy/read
