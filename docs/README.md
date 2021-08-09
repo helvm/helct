@@ -1,6 +1,6 @@
-# Welcome to 💼 💻 HELCT
+# 💼 💻 HELCT is Heavenly Esoteric Little C Transpiler to Esoteric Languages implemented in Haskell
 
-**💼 💻 HELCT** - Heavenly Esoteric Little C Transpiler to Esoteric Languages implemented in Haskell/Eta.
+**💼 💻 HELCT** is part of [HelVM](http://helvm.online/) project.
 
 **🧑‍💼 🧑‍💻 HTCTCL** - Happy TransCis TransCompiled Language is an implementation of [High-level] [Third-generation] [C Language].
 
