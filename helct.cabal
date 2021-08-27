@@ -28,7 +28,7 @@ library
 
   other-extensions:
   build-depends:
-      base
+      base                 < 4.16
     , relude               == 0.7.0.0
   mixins:
       base hiding (Prelude)
@@ -104,7 +104,7 @@ test-suite spec
         HelVM.HelCT.Assemblers.Expectations
   other-extensions:
   build-depends:
-      base
+      base                 < 4.16
     , relude               == 0.7.0.0
     , split
 
@@ -193,7 +193,7 @@ executable helct
 
   other-extensions:
   build-depends:
-      base
+      base                 < 4.16
     , relude               == 0.7.0.0
     , split
     , optparse-applicative >= 0.14.3.0
