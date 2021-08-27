@@ -5,10 +5,10 @@ module HelVM.HelCT.Assemblers.Expectations (
   goldenShouldParse
 ) where
 
-import HelVM.HelCT.Common.API
+import           HelVM.HelCT.Common.API
 
-import Test.Hspec
-import Test.Hspec.Attoparsec
+import           Test.Hspec
+import           Test.Hspec.Attoparsec
 
 infix 1 `shouldBeDo`
 shouldBeDo :: (HasCallStack, Show a, Eq a) => a -> IO a -> Expectation

@@ -20,7 +20,7 @@ clean:
 	if test -d .hpc; then rm -r .hpc; fi
 
 configure:
-	rm cabal.project.local*
+	rm -f cabal.project.local*
 	cabal configure --enable-benchmarks --enable-coverage --enable-tests
 
 haddock:
