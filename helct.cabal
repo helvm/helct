@@ -1,264 +1,162 @@
-cabal-version:       2.2
+cabal-version:       2.4
 
 name:                helct
 version:             0.1.0.0
 
-synopsis:            HELCT - Heavenly Esoteric Little C Transpiler to Esoteric Languages implemented in Haskell/Eta
+synopsis:            HELCT - Heavenly Esoteric Little C Transpiler to Esoteric Languages
 description:         Please see the README on GitHub at <https://github.com/helvm/helct#readme>
 homepage:            https://helvm.github.io/helct/
 bug-reports:         https://github.com/helvm/helct/issues
 
 license:             Apache-2.0
-license-file:        docs/LICENSE
+license-file:        docs/LICENSE-APACHE
 author:              Kamil Adam
 maintainer:          kamil.adam.zabinski@gmail.com
 copyright:           2020-2021 WriteOnly Developers
 
 category:            Language
 build-type:          Simple
-extra-source-files:  docs/CHANGELOG.md
+extra-source-files:
+  docs/CHANGELOG.md
+  docs/README.md
+
+tested-with:         GHC == 8.10.5
 
 source-repository head
   type:              git
   location:          https://github.com/helvm/helct
 
+common common-options
+  build-depends:
+      base    < 4.16
+    , relude               == 1.0.0.0
+  mixins:
+      base hiding (Prelude)
+    , relude (Relude as Prelude, Relude.Extra, Data.Text)
+  default-extensions:
+    EmptyDataDecls
+    ExistentialQuantification
+    FlexibleContexts
+    FlexibleInstances
+    FunctionalDependencies
+    GADTs
+    GeneralizedNewtypeDeriving
+    InstanceSigs
+    KindSignatures
+    LambdaCase
+    MultiParamTypeClasses
+    MultiWayIf
+    NamedFieldPuns
+--    NoImplicitPrelude
+    OverloadedStrings
+    PartialTypeSignatures
+    PatternGuards
+    PolyKinds
+    RankNTypes
+    RecordWildCards
+    ScopedTypeVariables
+    StandaloneDeriving
+    TupleSections
+    TypeFamilies
+    TypeSynonymInstances
+    ViewPatterns
+--    CPP
+--    TemplateHaskell
+--    ForeignFunctionInterface
+--    MagicHash
+--    UnliftedFFITypes
+    TypeOperators
+--    UnboxedTuples
+--    PackageImports
+--    QuasiQuotes
+--    DeriveAnyClass
+--    DeriveLift
+--    StaticPointers
+    DerivingStrategies
+    ConstraintKinds
+    StrictData
+  ghc-options:
+    -Wall
+    -Wcompat
+    -Widentities
+    -Wincomplete-uni-patterns
+    -Wincomplete-record-updates
+    -Wredundant-constraints
+    -Wnoncanonical-monad-instances
+    -fhide-source-paths
+--    -Wmissing-export-lists FIXME
+    -Wpartial-fields
+    -Wmissing-deriving-strategies
+    -fwrite-ide-info
+    -hiedir=.hie
+    -Wunused-packages
+--    -Werror
+    -fprint-potential-instances
+
+  default-language:    Haskell2010
+
 library
-  other-modules:
+  import:              common-options
+  hs-source-dirs:      hs/src
   exposed-modules:
+    HelVM.HelCT.HelCT
 
   other-extensions:
   build-depends:
-      base                 < 4.16
-    , relude               == 0.7.0.0
   mixins:
       base hiding (Prelude)
     , relude (Relude as Prelude, Relude.Extra)
   hs-source-dirs:      hs/src
   default-language:    Haskell2010
   ghc-options:
---Extensions
-    -XEmptyDataDecls
-    -XExistentialQuantification
-    -XFlexibleContexts
-    -XFlexibleInstances
-    -XFunctionalDependencies
-    -XGADTs
-    -XGeneralizedNewtypeDeriving
-    -XInstanceSigs
-    -XKindSignatures
-    -XLambdaCase
-    -XMonadFailDesugaring
-    -XMultiParamTypeClasses
-    -XMultiWayIf
-    -XNamedFieldPuns
---    -XNoImplicitPrelude
-    -XOverloadedStrings
-    -XPartialTypeSignatures
-    -XPatternGuards
-    -XPolyKinds
-    -XRankNTypes
-    -XRecordWildCards
-    -XScopedTypeVariables
-    -XStandaloneDeriving
-    -XTupleSections
-    -XTypeFamilies
-    -XTypeSynonymInstances
-    -XViewPatterns
---    -XCPP
---    -XTemplateHaskell
---    -XForeignFunctionInterface
---    -XMagicHash
---    -XUnliftedFFITypes
-    -XTypeOperators
---    -XUnboxedTuples
---    -XPackageImports
---    -XQuasiQuotes
---    -XDeriveAnyClass
---    -XDeriveLift
---    -XStaticPointers
---Only for lib
-    -XDeriveFunctor
---Warnings
-    -Wall
-    -Wcompat
-    -Widentities
-    -Wincomplete-uni-patterns
-    -Wincomplete-record-updates
-    -Wredundant-constraints
-    -Wnoncanonical-monad-instances
-    -fhide-source-paths
---    -Wmissing-export-lists FIXME
-    -Wpartial-fields
---    -Wmissing-deriving-strategies (GHC ⩾ 8.8)
---    -fwrite-ide-info              (GHC ⩾ 8.8)
---    -hiedir=.hie                  (GHC ⩾ 8.8)
---    -Wunused-packages             (GHC ⩾ 8.10)
-    -Werror
 
-test-suite spec
-  type:                exitcode-stdio-1.0
+executable helct
+  import:              common-options
+  hs-source-dirs:      hs/app
   main-is:             Main.hs
   other-modules:
-        Spec
-
-        HelVM.HelCT.Assemblers.Expectations
-  other-extensions:
+    AppOptions
   build-depends:
-      base                 < 4.16
-    , relude               == 0.7.0.0
-    , split
-
-    , attoparsec
-    , sort
-
-    , helct
-    , hspec
-    , hspec-attoparsec
-    , hspec-expectations-pretty
-    , hspec-slow
-    , QuickCheck
-    , smallcheck
-  mixins:
-      base hiding (Prelude)
-    , relude (Relude as Prelude, Relude.Extra)
-  hs-source-dirs:      hs/test
-  default-language:    Haskell2010
-  build-tool-depends:  hspec-discover:hspec-discover == 2.*
+--      helct
+--    , optparse-applicative >= 0.14.3.0
   ghc-options:
---Extensions
-    -XEmptyDataDecls
-    -XExistentialQuantification
-    -XFlexibleContexts
-    -XFlexibleInstances
-    -XFunctionalDependencies
-    -XGADTs
-    -XGeneralizedNewtypeDeriving
-    -XInstanceSigs
-    -XKindSignatures
-    -XLambdaCase
-    -XMonadFailDesugaring
-    -XMultiParamTypeClasses
-    -XMultiWayIf
-    -XNamedFieldPuns
---    -XNoImplicitPrelude
-    -XOverloadedStrings
-    -XPartialTypeSignatures
-    -XPatternGuards
-    -XPolyKinds
-    -XRankNTypes
-    -XRecordWildCards
-    -XScopedTypeVariables
-    -XStandaloneDeriving
-    -XTupleSections
-    -XTypeFamilies
-    -XTypeSynonymInstances
-    -XViewPatterns
---    -XCPP
---    -XTemplateHaskell
---    -XForeignFunctionInterface
---    -XMagicHash
---    -XUnliftedFFITypes
---    -XTypeOperators
---    -XUnboxedTuples
---    -XPackageImports
---    -XQuasiQuotes
---    -XDeriveAnyClass
---    -XDeriveLift
---    -XStaticPointers
---Warnings
-    -Wall
-    -Wcompat
-    -Widentities
-    -Wincomplete-uni-patterns
-    -Wincomplete-record-updates
-    -Wredundant-constraints
-    -Wnoncanonical-monad-instances
-    -fhide-source-paths
---    -Wmissing-export-lists FIXME
-    -Wpartial-fields
---    -Wmissing-deriving-strategies (GHC ⩾ 8.8)
---    -fwrite-ide-info              (GHC ⩾ 8.8)
---    -hiedir=.hie                  (GHC ⩾ 8.8)
---    -Wunused-packages             (GHC ⩾ 8.10)
-    -Werror
---Only for tests
     -threaded
     -rtsopts
     -with-rtsopts=-N
 
-executable helct
+test-suite helct-test
+  import:              common-options
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      hs/test
   main-is:             Main.hs
   other-modules:
-        AppOptions
-
-  other-extensions:
+    Spec
   build-depends:
-      base                 < 4.16
-    , relude               == 0.7.0.0
-    , split
-    , optparse-applicative >= 0.14.3.0
+      hspec
+    , hspec-core
+    , hspec-expectations-pretty-diff
+    , hspec-golden
+    , hspec-slow
 
-    , attoparsec
     , helct
-  mixins:
-      base hiding (Prelude)
-    , relude (Relude as Prelude, Relude.Extra)
-  hs-source-dirs:      hs/app
-  default-language:    Haskell2010
+
+  build-tool-depends:  hspec-discover:hspec-discover == 2.*
   ghc-options:
---Extensions
-    -XEmptyDataDecls
-    -XExistentialQuantification
-    -XFlexibleContexts
-    -XFlexibleInstances
-    -XFunctionalDependencies
-    -XGADTs
-    -XGeneralizedNewtypeDeriving
-    -XInstanceSigs
-    -XKindSignatures
-    -XLambdaCase
-    -XMonadFailDesugaring
-    -XMultiParamTypeClasses
-    -XMultiWayIf
-    -XNamedFieldPuns
---    -XNoImplicitPrelude
-    -XOverloadedStrings
-    -XPartialTypeSignatures
-    -XPatternGuards
-    -XPolyKinds
-    -XRankNTypes
-    -XRecordWildCards
-    -XScopedTypeVariables
-    -XStandaloneDeriving
-    -XTupleSections
-    -XTypeFamilies
-    -XTypeSynonymInstances
-    -XViewPatterns
---    -XCPP
---    -XTemplateHaskell
---    -XForeignFunctionInterface
---    -XMagicHash
---    -XUnliftedFFITypes
---    -XTypeOperators
---    -XUnboxedTuples
---    -XPackageImports
---    -XQuasiQuotes
---    -XDeriveAnyClass
---    -XDeriveLift
---    -XStaticPointers
---Warnings
-    -Wall
-    -Wcompat
-    -Widentities
-    -Wincomplete-uni-patterns
-    -Wincomplete-record-updates
-    -Wredundant-constraints
-    -Wnoncanonical-monad-instances
-    -fhide-source-paths
---    -Wmissing-export-lists FIXME
-    -Wpartial-fields
---    -Wmissing-deriving-strategies (GHC ⩾ 8.8)
---    -fwrite-ide-info              (GHC ⩾ 8.8)
---    -hiedir=.hie                  (GHC ⩾ 8.8)
---    -Wunused-packages             (GHC ⩾ 8.10)
-    -Werror
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N
+
+benchmark helct-benchmark
+  import:              common-options
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      hs/benchmark
+  main-is:             Main.hs
+  build-depends:
+      gauge
+
+--    , helct
+
+  ghc-options:
+    -threaded
+    -rtsopts
+    -with-rtsopts=-N
