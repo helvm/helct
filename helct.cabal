@@ -29,7 +29,7 @@ source-repository head
 common common-options
   build-depends:
       base             <  4.16
-    , relude           == 1.0.0.0
+    , relude           == 1.0.0.1
   mixins:
       base hiding (Prelude)
     , relude (Relude as Prelude, Relude.Extra, Data.Text)
