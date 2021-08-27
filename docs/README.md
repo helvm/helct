@@ -26,7 +26,7 @@ THAT is an C Transpiler to Esoteric Languages
 * [CONTRIBUTING](CONTRIBUTING.md)
 * [CODE OF CONDUCT](CODE_OF_CONDUCT.md)
 
-# 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
+## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
 
 [High-level]:        https://en.wikipedia.org/wiki/High-level_programming_language
 [Third-generation]: https://en.wikipedia.org/wiki/Third-generation_programming_language

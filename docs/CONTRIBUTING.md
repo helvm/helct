@@ -14,3 +14,5 @@ for inclusion in the work by you, as defined in the Apache-2.0 license, shall be
 additional terms or conditions.
 
 For more see [ROADMAP](ROADMAP.md) and [COC](CODE_OF_CONDUCT.md).
+
+## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄

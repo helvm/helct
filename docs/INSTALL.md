@@ -40,3 +40,5 @@ Compile and run with `gradlew`:
 ## Other
 
 For more see [CONTRIBUTING](CONTRIBUTING.md).
+
+## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
