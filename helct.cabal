@@ -1,35 +1,35 @@
-cabal-version:       2.4
+cabal-version:         2.4
 
-name:                helct
-version:             0.1.0.0
+name:                  helct
+version:               0.1.0.0
 
-synopsis:            HELCT - Heavenly Esoteric Little C Transpiler to Esoteric Languages
-description:         Please see the README on GitHub at <https://github.com/helvm/helct#readme>
-homepage:            https://helvm.github.io/helct/
-bug-reports:         https://github.com/helvm/helct/issues
+synopsis:              HELCT - Heavenly Esoteric Little C Transpiler to Esoteric Languages
+description:           Please see the README on GitHub at <https://github.com/helvm/helct#readme>
+homepage:              https://helvm.github.io/helct/
+bug-reports:           https://github.com/helvm/helct/issues
 
-license:             Apache-2.0
-license-file:        docs/LICENSE-APACHE
-author:              Kamil Adam
-maintainer:          kamil.adam.zabinski@gmail.com
-copyright:           2020-2021 WriteOnly Developers
+license:               Apache-2.0
+license-file:          docs/LICENSE-APACHE
+author:                Kamil Adam
+maintainer:            kamil.adam.zabinski@gmail.com
+copyright:             2020-2021 WriteOnly Developers
 
-category:            Language
-build-type:          Simple
+category:              Language
+build-type:            Simple
 extra-source-files:
   docs/CHANGELOG.md
   docs/README.md
 
-tested-with:         GHC == 9.0.1
+tested-with:           GHC == 9.0.1
 
 source-repository head
-  type:              git
-  location:          https://github.com/helvm/helct
+  type:                git
+  location:            https://github.com/helvm/helct
 
 common common-options
   build-depends:
-      base    < 4.16
-    , relude               == 1.0.0.0
+      base             <  4.16
+    , relude           == 1.0.0.0
   mixins:
       base hiding (Prelude)
     , relude (Relude as Prelude, Relude.Extra, Data.Text)
