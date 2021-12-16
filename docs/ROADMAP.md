@@ -25,4 +25,6 @@ Code tu use in test
 * TinyScheme
 * s7
 
+[comment]: <> (Transcript)
+
 ## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
