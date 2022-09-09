@@ -32,7 +32,7 @@ THAT is an C Transpiler to Esoteric Languages
 * [hpc](reports/hpc/helpa-test/hpc_index.html) - Haskell program coverage report
 * [stan](reports/stan.html) - Haskell STatic ANalyser report
 
-##🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤
+## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤
 
 [High-level]:        https://en.wikipedia.org/wiki/High-level_programming_language
 [Third-generation]: https://en.wikipedia.org/wiki/Third-generation_programming_language
