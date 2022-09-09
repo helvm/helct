@@ -1,4 +1,4 @@
-# 📜 Revision history for Helct
+# 📅 Revision history for HelCT
 
 ## 0.1.0.0  -- 2020-05-09
 

@@ -1,4 +1,4 @@
-# ROADMAP
+# 🛣️ ROADMAP
 
 **Planned features.**
 
@@ -26,5 +26,7 @@ Code tu use in test
 * s7
 
 [comment]: <> (Transcript)
+
+For planned features see [TODO](../users/TODO.md).
 
 ## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤
