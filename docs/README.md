@@ -10,23 +10,29 @@ THE HELCT IS a Heavenly Esoteric Little C Transpiler to Esoteric Languages imple
 THAT is an C Transpiler to Esoteric Languages
 ```
 
-## For User
-* [INSTALL](INSTALL.md) - How to download, test and run.
-* [TODO](TODO.md) - Features to do.
-* [NEWS](NEWS.md) - New features.
-* [BUGS](BUGS.md) - Know bugs to fix.
-* [FAQ](FAQ.md) -  Frequently Asked Questions & Frequently Given Answers.
+## For Users
+* [INSTALL](users/INSTALL.md) - How to download and run
+* [AUTHORS](users/AUTHORS.md) - List of authors
+* [THANKS](users/THANKS.md) - Thanks for inspiration
+* [TODO](users/TODO.md) - Features and to do for all projects
+* [NEWS](users/NEWS.md) - New features
+* [FAQ](users/FAQ.md) - Frequently Asked Questions & Frequently Given Answers
 
 ## For Developers
+* [BUGS](developers/BUGS.md) - Know bugs to fix
+* [ROADMAP](developers/ROADMAP.md) - Long versions of [TODO](users/TODO.md)
+* [CHANGELOG](developers/CHANGELOG.md) - Long versions of [NEWS](users/NEWS.md)
+* [ARCHITECTURE](developers/ARCHITECTURE.md) - List of libraries
+* [CONTRIBUTING](developers/CONTRIBUTING.md)
+* [CODE OF CONDUCT](developers/CODE_OF_CONDUCT.md)
 
-* [AUTHORS](AUTHORS.md)
-* [ROADMAP](ROADMAP.md)
-* [CHANGELOG](CHANGELOG.md)
-* [ARCHITECTURE](ARCHITECTURE.md)
-* [CONTRIBUTING](CONTRIBUTING.md)
-* [CODE OF CONDUCT](CODE_OF_CONDUCT.md)
+## Reports
+* [hadock](reports/doc/index.html) - A documentation
+* [hlint](reports/hlint.html) - Source code suggestions report
+* [hpc](reports/hpc/helpa-test/hpc_index.html) - Haskell program coverage report
+* [stan](reports/stan.html) - Haskell STatic ANalyser report
 
-## 🌈 ❤️ 💛 💚 💙 🤍 🖤 🦄
+##🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤
 
 [High-level]:        https://en.wikipedia.org/wiki/High-level_programming_language
 [Third-generation]: https://en.wikipedia.org/wiki/Third-generation_programming_language
