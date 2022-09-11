@@ -27,10 +27,10 @@ THAT is an C Transpiler to Esoteric Languages
 * [CODE OF CONDUCT](developers/CODE_OF_CONDUCT.md)
 
 ## Reports
-* [hadock](reports/doc/index.html) - A documentation
-* [hlint](reports/hlint.html) - Source code suggestions report
-* [hpc](reports/hpc/helpa-test/hpc_index.html) - Haskell program coverage report
+* [hadock](reports/helct/index.html) - A documentation
+* [hpc](reports/helct-test/hpc_index.html) - Haskell program coverage report
 * [stan](reports/stan.html) - Haskell STatic ANalyser report
+* [hlint](reports/hlint.html) - Source code suggestions report
 
 ## 🦄 🌈 ❤️ 💛 💚 💙 🤍 🖤
 
