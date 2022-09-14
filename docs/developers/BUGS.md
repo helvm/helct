@@ -2,7 +2,7 @@
 
 **Know bugs.**
 
-[List of bugs](https://github.com/helvm/helpa/labels/bug).
+[List of bugs](https://github.com/helvm/helct/labels/bug).
 
 New bugs report by [Github Issues](https://github.com/helvm/helct/issues).
 
