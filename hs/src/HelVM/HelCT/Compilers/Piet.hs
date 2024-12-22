@@ -1,12 +1,12 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module HelVM.HelCT.HelCT where
+module HelVM.HelCT.Compilers.Piet where
 
-import Text.Megaparsec
-import Text.Megaparsec.Char
+import           Data.Functor
+import           Data.Void
+import           Text.Megaparsec
+import           Text.Megaparsec.Char
 import qualified Text.Megaparsec.Char.Lexer as L
-import Data.Void
-import Data.Functor
 
 type Parser = Parsec Void String
 
