@@ -20,7 +20,7 @@ extra-source-files:
   docs/developers/CHANGELOG.md
   docs/README.md
 
-tested-with:           GHC == 9.0.1
+tested-with:           GHC == 9.10.1
 
 source-repository head
   type:                git
@@ -28,8 +28,8 @@ source-repository head
 
 common common-options
   build-depends:
-      base             <  4.16
-    , relude           == 1.0.0.1
+      base             <  4.21
+    , relude           ==  1.2.2.0
   mixins:
       base hiding (Prelude)
     , relude (Relude as Prelude, Relude.Extra, Data.Text)
@@ -130,6 +130,7 @@ test-suite helct-test
   hs-source-dirs:      hs/test
   main-is:             Main.hs
   other-modules:
+    Slow
     Spec
   build-depends:
       hspec
@@ -137,6 +138,9 @@ test-suite helct-test
     , hspec-expectations-pretty-diff
     , hspec-golden
     , hspec-slow
+    , mtl
+    , stm
+    , time
 
     , helct
 
@@ -146,17 +150,17 @@ test-suite helct-test
     -rtsopts
     -with-rtsopts=-N
 
-benchmark helct-benchmark
-  import:              common-options
-  type:                exitcode-stdio-1.0
-  hs-source-dirs:      hs/benchmark
-  main-is:             Main.hs
-  build-depends:
-      gauge
+--benchmark helct-benchmark
+--  import:              common-options
+--  type:                exitcode-stdio-1.0
+--  hs-source-dirs:      hs/benchmark
+--  main-is:             Main.hs
+--  build-depends:
+--      gauge
 
 --    , helct
 
-  ghc-options:
-    -threaded
-    -rtsopts
-    -with-rtsopts=-N
+--  ghc-options:
+--    -threaded
+--    -rtsopts
+--    -with-rtsopts=-N
