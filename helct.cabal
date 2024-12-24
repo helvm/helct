@@ -1,7 +1,7 @@
 cabal-version:         2.4
 
 name:                  helct
-version:               0.1.0.0
+version:               0.1.0.1
 
 synopsis:              HELCT - Heavenly Esoteric Little C Transpiler to Esoteric Languages
 description:           Please see the README on GitHub at <https://github.com/helvm/helct#readme>
