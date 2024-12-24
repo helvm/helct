@@ -1,7 +1,7 @@
 cabal-version:         2.4
 
 name:                  helct
-version:               0.1.0.1
+version:               0.1.1.0
 
 synopsis:              HELCT - Heavenly Esoteric Little C Transpiler to Esoteric Languages
 description:           Please see the README on GitHub at <https://github.com/helvm/helct#readme>
@@ -100,6 +100,7 @@ library
   hs-source-dirs:      hs/src
   exposed-modules:
     HelVM.HelCT.HelCT
+
     HelVM.HelCT.Compilers.LanguageC.Examples.BasicUsage
     HelVM.HelCT.Compilers.LanguageC.Examples.DumpAst
     HelVM.HelCT.Compilers.LanguageC.Examples.ParseAndPrint
@@ -108,9 +109,15 @@ library
     HelVM.HelCT.Compilers.LanguageC.Examples.TypeCheck
     HelVM.HelCT.Compilers.LanguageC.Examples.ComputeSize
 
+    HelVM.HelCT.Compilers.MiniML.Token
+    HelVM.HelCT.Compilers.MiniML.Lexer
+    HelVM.HelCT.Compilers.MiniML.Parser
+
   other-extensions:
   build-depends:
       language-c
+    , array
+    , bytestring
     , containers
     , filepath
     , pretty

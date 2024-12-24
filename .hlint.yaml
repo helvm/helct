@@ -14,6 +14,8 @@
     name: Use head
 - ignore:
     name: Use Foldable.forM_
+- ignore:
+      file: hs/src/HelVM/HelCT/Compilers/MiniML/Lexer.hs
 - hint:
     lhs: "pure ()"
     note: "Use 'pass'"

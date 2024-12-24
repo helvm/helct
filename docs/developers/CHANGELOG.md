@@ -1,5 +1,9 @@
 # 📅 Revision history for HelCT
 
+## 0.1.1.0  -- 2024-12-24
+
+* Implement MiniML
+
 ## 0.1.0.2  -- 2025-01-07
 
 * Add language-c
