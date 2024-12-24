@@ -29,7 +29,13 @@ exec:
 	make tix
 	cabal new-exec --jobs helct
 
+exterminate:
+	rm -f hs/src/HelVM/HelCT/Compilers/MiniML/Lexer.hs
+
 fast: main report sdist install
+
+generate:
+	alex hs/src/HelVM/HelCT/Compilers/MiniML/Lexer.x
 
 golden:
 	if test -d .output/golden; then rm -r .output/golden; fi
@@ -47,7 +53,7 @@ install:
 	cabal install all --overwrite-policy=always
 
 main:
-	make stylish configure check build test
+	make exterminate stylish configure check generate build test
 
 output:
 	if test -d .output; then rm -r .output; fi

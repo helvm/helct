@@ -1,5 +1,9 @@
 # 📅 Revision history for HelCT
 
+## 0.1.1.0  -- 2024-12-24
+
+* Add MiniML
+
 ## 0.1.0.1  -- 2024-12-22
 
 * Update libraries
