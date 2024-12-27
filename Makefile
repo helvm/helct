@@ -31,11 +31,13 @@ exec:
 
 exterminate:
 	rm -f hs/src/HelVM/HelCT/Compilers/MiniML/Lexer.hs
+	rm -f hs/src/HelVM/HelCT/Compilers/MiniML/Parser.hs
 
 fast: main report sdist install
 
 generate:
 	alex hs/src/HelVM/HelCT/Compilers/MiniML/Lexer.x
+	happy hs/src/HelVM/HelCT/Compilers/MiniML/Parser.y
 
 golden:
 	if test -d .output/golden; then rm -r .output/golden; fi

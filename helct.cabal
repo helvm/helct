@@ -101,6 +101,8 @@ library
   exposed-modules:
     HelVM.HelCT.HelCT
     HelVM.HelCT.Compilers.MiniML.Token
+    HelVM.HelCT.Compilers.MiniML.Lexer
+    HelVM.HelCT.Compilers.MiniML.Parser
 
   other-extensions:
   build-depends:
