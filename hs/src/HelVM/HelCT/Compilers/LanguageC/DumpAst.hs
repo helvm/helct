@@ -8,6 +8,8 @@ import           System.Exit               (ExitCode (ExitFailure))
 import           System.IO                 (hPutStrLn, stderr)
 import           Text.PrettyPrint.HughesPJ (hsep, render, text, (<+>))
 import qualified Text.Show
+import           Text.Show                 (ShowS, showString, shows)
+
 
 usageMsg :: String -> String
 usageMsg prg = render $ text "Usage:" <+> text prg <+> hsep (map text ["CPP_OPTIONS","input_file.c"])
@@ -21,22 +23,22 @@ main = do
   ast <- errorOnLeftM "Parse Error" $ parseCFile (newGCC "gcc") Nothing opts input_file
   putStrLn $ decorate (shows (fmap (const ShowPlaceholder) ast)) ""
 
-errorOnLeft :: (Show a) => String -> (Either a b) -> IO b
-errorOnLeft msg = either (error . ((msg <> ": ")<>).show) return
+errorOnLeft :: (Show a) => Text -> (Either a b) -> IO b
+errorOnLeft msg = either ((error) . ((msg <> ": ")<>).show) return
 
-errorOnLeftM :: (Show a) => String -> IO (Either a b) -> IO b
+errorOnLeftM :: (Show a) => Text -> IO (Either a b) -> IO b
 errorOnLeftM msg action = action >>= errorOnLeft msg
 
 data ShowPlaceholder = ShowPlaceholder
 instance Show ShowPlaceholder where
   showsPrec _ ShowPlaceholder = showString "_"
 
-type ShowS = Text -> Text
-
-showString :: Text -> ShowS
-showString = (<>)
-
-shows = showsPrec 0
+--type ShowS = Text -> Text
+--
+--showString :: Text -> ShowS
+--showString = (<>)
+--
+--shows = showsPrec 0
 
 decorate :: ShowS -> ShowS
 decorate app = showString "(" . app . showString ")"
