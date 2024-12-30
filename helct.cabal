@@ -100,9 +100,19 @@ library
   hs-source-dirs:      hs/src
   exposed-modules:
     HelVM.HelCT.HelCT
+    HelVM.HelCT.Compilers.LanguageC.BasicUsage
+    HelVM.HelCT.Compilers.LanguageC.DumpAst
+    HelVM.HelCT.Compilers.LanguageC.ParseAndPrint
+    HelVM.HelCT.Compilers.LanguageC.ScanFile
+    HelVM.HelCT.Compilers.LanguageC.SearchDef
+    HelVM.HelCT.Compilers.LanguageC.TypeCheck
 
   other-extensions:
   build-depends:
+      language-c
+    , containers
+    , filepath
+    , pretty
   mixins:
       base hiding (Prelude)
     , relude (Relude as Prelude, Relude.Extra)

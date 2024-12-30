@@ -1,5 +1,9 @@
 # 📅 Revision history for HelCT
 
+## 0.1.0.2  -- 2024-12-27
+
+* Add language-c
+
 ## 0.1.0.1  -- 2024-12-22
 
 * Update libraries
