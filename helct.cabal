@@ -12,7 +12,7 @@ license:               Apache-2.0
 license-file:          docs/license/LICENSE-APACHE
 author:                Kamil Adam
 maintainer:            kamil.adam.zabinski@gmail.com
-copyright:             2020-2021 WriteOnly Developers
+copyright:             2020-2025 WriteOnly Developers
 
 category:              Language
 build-type:            Simple
@@ -100,9 +100,21 @@ library
   hs-source-dirs:      hs/src
   exposed-modules:
     HelVM.HelCT.HelCT
+    HelVM.HelCT.Compilers.LanguageC.Examples.BasicUsage
+    HelVM.HelCT.Compilers.LanguageC.Examples.DumpAst
+    HelVM.HelCT.Compilers.LanguageC.Examples.ParseAndPrint
+    HelVM.HelCT.Compilers.LanguageC.Examples.ScanFile
+    HelVM.HelCT.Compilers.LanguageC.Examples.SearchDef
+    HelVM.HelCT.Compilers.LanguageC.Examples.TypeCheck
+    HelVM.HelCT.Compilers.LanguageC.Examples.ComputeSize
 
   other-extensions:
   build-depends:
+      language-c
+    , containers
+    , filepath
+    , pretty
+    , syb
   mixins:
       base hiding (Prelude)
     , relude (Relude as Prelude, Relude.Extra)
