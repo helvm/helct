@@ -27,7 +27,7 @@ main = do
       Nothing     -> print "Not found"
       Just def_id -> printDecl def_id ast
     where
-    checkResult :: (Show a) => String -> (Either a b) -> IO b
+    checkResult :: (Show a) => String -> Either a b -> IO b
     checkResult label = either ((error . toText) . (label<>) . show) return
 
     printDecl :: NodeInfo -> CTranslUnit -> IO ()
@@ -36,9 +36,9 @@ main = do
       mapM_ (printIfMatch def_id) (zip decls' (map Just (tail $ fromList decls') <> [Nothing]))
     printIfMatch def (decl,Just next_decl) | posOfNode def >= posOf decl &&
                                              posOfNode def < posOf next_decl = (print . pretty) decl
-                                           | otherwise = return ()
+                                           | otherwise = pass
     printIfMatch def (decl, Nothing) | posOfNode def >= posOf decl = (print . pretty) decl
-                                     | otherwise = return ()
+                                     | otherwise = pass
     searchDef globs term =
       case analyseSearchTerm term of
         Left tag -> fmap nodeInfo (Map.lookup tag (gTags globs))

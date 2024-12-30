@@ -5,8 +5,8 @@ import           Language.C
 import           Language.C.System.GCC
 
 import           System.Exit               (ExitCode (..))
-import           System.IO                 (hPutStr, hPutStrLn)
-import           Text.PrettyPrint.HughesPJ (Doc, hsep, nest, render, text, ($+$), (<+>))
+import           System.IO                 (hPutStrLn)
+import           Text.PrettyPrint.HughesPJ (hsep, render, text, (<+>))
 
 usageMsg :: String -> String
 usageMsg prg = render $
