@@ -17,13 +17,13 @@ main :: IO ()
 main = do
   let usageErr = (hPutStrLn stderr (usageMsg "./ParseAndPrint") >> exitWith (ExitFailure 1))
   args <- getArgs
-  when (length args < 1) usageErr
+  when (null args) usageErr
   let (opts,input_file) = (init $ fromList args, last $ fromList args)
   ast <- errorOnLeftM "Parse Error" $ parseCFile (newGCC "gcc") Nothing opts input_file
   putStrLn $ decorate (shows (fmap (const ShowPlaceholder) ast)) ""
 
 errorOnLeft :: (Show a) => Text -> Either a b -> IO b
-errorOnLeft msg = either ((error) . ((msg <> ": ")<>).show) return
+errorOnLeft msg = either (error . ((msg <> ": ")<>).show) return
 
 errorOnLeftM :: (Show a) => Text -> IO (Either a b) -> IO b
 errorOnLeftM msg action = action >>= errorOnLeft msg

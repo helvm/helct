@@ -5,12 +5,12 @@ import           Language.C
 import           Language.C.Analysis
 import           Language.C.System.GCC
 
-import           Control.Monad
+import           Control.Monad hidding (when)
 import           Data.List                 (isInfixOf)
 import           System.Environment        (getEnvironment)
 import           System.Exit               (ExitCode (..))
 import           System.FilePath
-import           System.IO                 (hPutStr, hPutStrLn)
+import           System.IO                 (hPrint, hPutStr, hPutStrLn)
 import           Text.PrettyPrint.HughesPJ (Doc, hsep, nest, render, text, ($+$), (<+>))
 
 usageMsg :: String -> String
@@ -18,7 +18,7 @@ usageMsg prg = render $
   text "Usage:" <+> text prg <+> hsep (map text ["CPP_OPTIONS","input_file.c","[file-pattern]"]) $+$
   (nest 4 $
     text "Environment Variables" $+$
-      (nest 4 $
+      nest 4 (
          hsep [text "TRACE_EVENTS", text "trace definition events as they occur"]
       )
   )
@@ -27,8 +27,8 @@ main :: IO ()
 main = do
     let usageErr = (hPutStrLn stderr (usageMsg "./ScanFile") >> exitWith (ExitFailure 1))
     args <- getArgs
-    when (length args < 1) usageErr
-    doTraceDecls <- liftM (("TRACE_EVENTS" `elem`). map fst) getEnvironment
+    when (null args) usageErr
+    doTraceDecls <- fmap (("TRACE_EVENTS" `elem`). map fst) getEnvironment
     -- get cpp options and input file
     let (pat,opts,input_file) = case hasExtension (last $ fromList args) of
                               True -> (Nothing,init $ fromList args,last $ fromList args)
@@ -43,13 +43,13 @@ main = do
     (globals,warnings) <- errorOnLeft "Semantic Error" $ runTrav_ $ traversal doTraceDecls ast
 
     -- print
-    mapM_ (hPutStrLn stderr . show) warnings
+    mapM_ (hPrint stderr) warnings
     print $ pretty $ filterGlobalDecls (maybe False (fileOfInterest pat input_file) . fileOfNode) globals
 
     where
     traversal False ast = analyseAST ast
     traversal True  ast = withExtDeclHandler (analyseAST ast) $ \ext_decl ->
-                          trace (declTrace ext_decl) (pass)
+                          trace (declTrace ext_decl) pass
 
     fileOfInterest (Just pat) _ file_name       = pat `isInfixOf` file_name
     fileOfInterest Nothing input_file file_name = fileOfInterest' (splitExtensions input_file) (splitExtension file_name)

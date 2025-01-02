@@ -32,7 +32,7 @@ main = do
 
     printDecl :: NodeInfo -> CTranslUnit -> IO ()
     printDecl def_id (CTranslUnit decls _) =
-      let decls' = filter (maybe False (posFile (posOfNode def_id) ==).fileOfNode) decls in
+      let decls' = filter ((Just (posFile (posOfNode def_id)) ==).fileOfNode) decls in
       mapM_ (printIfMatch def_id) (zip decls' (map Just (tail $ fromList decls') <> [Nothing]))
     printIfMatch def (decl,Just next_decl) | posOfNode def >= posOf decl &&
                                              posOfNode def < posOf next_decl = (print . pretty) decl
@@ -47,6 +47,6 @@ main = do
                        <|> fmap nodeInfo (Map.lookup (NamedRef ident) (gTags globs))
     analyseSearchTerm term =
       case words (toText term) of
-        [tag,name] | tag `elem` (words "struct union enum") -> Left $ NamedRef (internalIdent $ toString name)
+        [tag,name] | tag `elem` words "struct union enum" -> Left $ NamedRef (internalIdent $ toString name)
         [ident]                                             -> Right (internalIdent $ toString ident)
         _                                                   -> error "bad search term"
