@@ -125,7 +125,7 @@ library
     , syb
   mixins:
       base hiding (Prelude)
-    , relude (Relude as Prelude, Relude.Extra)
+    , relude (Relude as Prelude, Relude.Extra, Relude.Unsafe)
   hs-source-dirs:      hs/src
   default-language:    Haskell2010
   ghc-options:

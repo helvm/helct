@@ -16,9 +16,12 @@ module HelVM.HelCT.Compilers.MiniML.Lexer
   ) where
 
 import Control.Monad (when)
-import Data.ByteString.Lazy.Char8 (ByteString)
+--import Data.ByteString.Lazy.Char8 (ByteString)
 import qualified Data.ByteString.Lazy.Char8 as BS
 import Data.Scientific (Scientific)
+
+import Prelude hiding (get, modify, put)
+import Relude.Unsafe
 }
 
 %wrapper "monadUserState-bytestring"
