@@ -1,6 +1,6 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module HelVM.HelCT.Compilers.Piet where
+module HelVM.HelCT.Compilers.Piet.Parser where
 
 import           Data.Functor
 import           Data.Void
@@ -84,7 +84,7 @@ routine = do
   name <- identifier
   params <- between (symbol "(") (symbol ")") (identifier `sepBy` symbol ",")
   body <- block
-  return $ Routine name params body
+  Routine name params <$> block
 
 program :: Parser Program
 program = Program <$> many routine

@@ -108,6 +108,8 @@ library
     HelVM.HelCT.Compilers.LanguageC.Examples.TypeCheck
     HelVM.HelCT.Compilers.LanguageC.Examples.ComputeSize
 
+    HelVM.HelCT.Compilers.Piet.Parser
+
   other-extensions:
   build-depends:
       language-c
