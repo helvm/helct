@@ -121,6 +121,7 @@ library
     , containers
     , filepath
     , pretty
+    , scientific
     , syb
   mixins:
       base hiding (Prelude)
