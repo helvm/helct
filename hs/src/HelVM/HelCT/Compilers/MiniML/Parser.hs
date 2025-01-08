@@ -21,7 +21,7 @@ import Data.Maybe (fromJust)
 import Data.Monoid (First (..))
 
 import qualified HelVM.HelCT.Compilers.MiniML.Lexer as L
-import qualified HelVM.HelCT.Compilers.MiniML.Token as L
+--import qualified HelVM.HelCT.Compilers.MiniML.Token as L
 
 import Prelude hiding (ByteString, Type)
 import qualified Data.Function as Happy_Prelude
