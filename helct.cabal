@@ -1,7 +1,7 @@
 cabal-version:         2.4
 
 name:                  helct
-version:               0.1.0.1
+version:               0.1.0.3
 
 synopsis:              HELCT - Heavenly Esoteric Little C Transpiler to Esoteric Languages
 description:           Please see the README on GitHub at <https://github.com/helvm/helct#readme>
@@ -28,8 +28,8 @@ source-repository head
 
 common common-options
   build-depends:
-      base             <  4.21
-    , relude           ==  1.2.2.0
+      base                 <  4.21
+    , relude               == 1.2.2.0
   mixins:
       base hiding (Prelude)
     , relude (Relude as Prelude, Relude.Extra, Data.Text)
@@ -144,6 +144,8 @@ test-suite helct-test
   other-modules:
     Slow
     Spec
+    SpecHook
+
   build-depends:
       hspec
     , hspec-core
